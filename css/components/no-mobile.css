@@ -2,17 +2,44 @@
   position: absolute;
   z-index: 99;
   height: 100vh;
-  background-color: var(--yellow);
+  background-color: var(--nodam-color);
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 32px;
   top: 0;
+  /* 배경색 변화 애니메이션 적용 */
+  animation: color-change-2x 2s linear infinite alternate both;
+}
+
+#no-mobile img {
+  max-width: 100%; /* 이미지가 너무 크지 않도록 최대 너비 설정 */
+  height: auto; /* 이미지 비율 유지 */
+  /* 이미지를 중앙에 배치하기 위한 추가 설정 필요 없음, 부모가 flex이므로 */
 }
 
 @media screen and (max-width: 645px) {
   #no-mobile {
     display: none;
+  }
+}
+
+/* 배경색 변경 애니메이션 */
+@-webkit-keyframes color-change-2x {
+  0% {
+    background: #19dcea;
+  }
+  100% {
+    background: #b22cff;
+  }
+}
+
+@keyframes color-change-2x {
+  0% {
+    background: #19dcea;
+  }
+  100% {
+    background: #b22cff;
   }
 }

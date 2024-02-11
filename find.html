@@ -4,7 +4,108 @@
     <link rel="stylesheet" href="css/styles.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Find - Kokoa Clone</title>
+    <title>자가진단 - 니코틴 의존도</title>
+
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%; /* Full height */
+        overflow: hidden; /* Disable body scrolling */
+      }
+
+      .status-bar,
+      .screen-header,
+      .nav {
+        position: fixed;
+        width: 100%;
+        z-index: 2; /* Ensure these elements stay on top */
+      }
+
+      .status-bar {
+        top: 0;
+      }
+
+      .screen-header {
+        top: 20px; /* Adjust this value based on the actual height of your status-bar */
+      }
+
+      .nav {
+        bottom: 0;
+      }
+
+      .main-screen {
+        margin-top: 10px; /* 상단의 status-bar와 screen-header 높이를 고려한 마진 */
+        margin-bottom: 50px; /* 하단의 nav 높이를 고려한 마진 */
+        overflow-y: auto; /* 내용이 넘칠 때 스크롤 활성화 */
+        position: absolute; /* 절대 위치 설정 */
+        top: 100px; /* 상단에서의 위치 */
+        bottom: 50px; /* 하단에서의 위치 */
+        left: 0;
+        right: 0;
+        -webkit-overflow-scrolling: touch; /* iOS 기기에서의 부드러운 스크롤링 */
+      }
+      .image-overlay {
+        margin: 10px 0px;
+        position: relative; /* Relative to main-screen */
+      }
+
+      .image-overlay img {
+        width: 100%; /* Make the image stretch to cover the width of the container */
+        height: auto; /* Maintain aspect ratio */
+      }
+
+      .overlay-text {
+        position: absolute; /* Absolute positioning within the image-overlay */
+        top: 0;
+        left: 0;
+        width: 100%;
+        color: white; /* Default text color */
+        padding: 20px; /* Padding inside the overlay container */
+        box-sizing: border-box; /* Include padding in the element's total width and height */
+      }
+
+      .overlay-text h1 {
+        color: yellow; /* Specific color for part of the text */
+        font-size: 20px;
+      }
+
+      .overlay-text p {
+        color: gray; /* Specific color for the paragraph */
+        font-size: 15px;
+      }
+      table {
+        width: 100%;
+        text-align: center;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid black;
+        text-align: center;
+        vertical-align: middle; /* Centers text vertically */
+      }
+
+      th {
+        background-color: gray;
+        color: black;
+        font-weight: bold;
+        font-size: 12pt; /* Updated font size for header */
+      }
+
+      .symptom {
+        text-align: left;
+        font-size: 10pt; /* Updated font size for symptoms */
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+    </style>
   </head>
   <body>
     <div class="status-bar">
@@ -23,7 +124,7 @@
     </div>
 
     <header class="screen-header">
-      <h1 class="screen-header__title">Find</h1>
+      <h1 class="screen-header__title">자가진단 - 니코틴 의존도</h1>
       <div class="screen-header__icons">
         <span><i class="fas fa-search fa-lg"></i></span>
         <span><i class="fas fa-cog fa-lg"></i></span>
@@ -31,90 +132,188 @@
     </header>
 
     <main class="main-screen">
-      <div class="icon-row">
-        <div class="icon-row__icon">
-          <i class="fas fa-qrcode"></i>
-          <span>QR Code</span>
-        </div>
-        <div class="icon-row__icon">
-          <i class="far fa-address-book"></i>
-          <span>Add by Contacts</span>
-        </div>
-        <div class="icon-row__icon">
-          <i class="fas fa-fingerprint"></i>
-          <span>Add by ID</span>
-        </div>
-        <div class="icon-row__icon">
-          <i class="far fa-envelope"></i>
-          <span>Invite</span>
+      <div class="image-overlay">
+        <img src="imgs/self_test_smoking.jpg" alt="Self Test" />
+        <div class="overlay-text">
+          <h1>니코틴 의존도 자가진단</h1>
+          <p>
+            아래 문항을 통해 귀하의 점수를 기초로 니코틴 의존도를 확인할 수
+            있습니다.
+          </p>
         </div>
       </div>
-      <div class="recommended-friends">
-        <h6 class="recommended-friends__title">Recommended Friends</h6>
-        <span>You have no recommended friends.</span>
-      </div>
-      <div class="open-chat">
-        <div class="open-chat__header">
-          <h4>Open Chat</h4>
-          <span
-            >Go to Openchat Home <i class="fas fa-chevron-right fa-xs"></i>
-          </span>
-        </div>
-        <div class="open-post">
-          <div class="open-post__column">
-            <h5 class="open-post__title">#BTS</h5>
-            <h6 class="open-post__hashtags">#bts#army#friends</h6>
-            <div class="open-post__members">
-              <img src="https://avatars3.githubusercontent.com/u/3612017" />
-              <span class="open-post__member-count">802 members</span>
-              <div class="divider"></div>
-              <span class="open-post__member-status">Active</span>
-            </div>
-          </div>
-          <div class="open-post__column">
-            <div class="open-post__photo">
-              <img src="https://avatars3.githubusercontent.com/u/3612017" />
-              <div class="open-post__heart-count">
-                <i class="fas fa-heart fa-xs"></i><span>326</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+      <table>
+        <tr>
+          <th>증상</th>
+          <th>
+            <div>매우 그렇지 않다<br />(5이하)</div>
+          </th>
+          <th>
+            <div>그렇지 않다<br />(6~10)</div>
+          </th>
+          <th>
+            <div>보통이다<br />(11~20)</div>
+          </th>
+          <th>
+            <div>그렇다<br />(21~30)</div>
+          </th>
+          <th>
+            <div>매우 그렇다<br />(31이상)</div>
+          </th>
+        </tr>
+        <tr>
+          <td class="symptom">주변 사람들은 나를 골초라고 여긴다.</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+        </tr>
+        <tr>
+          <td class="symptom">담배가 없으면 하루를 망친다.</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+        </tr>
+        <tr>
+          <td class="symptom">담배 때문에 다른사람과 감정이 상한 일이있다.</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+        </tr>
+        <tr>
+          <td class="symptom">담배로 스트레스를 푼다.</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+        </tr>
+        <tr>
+          <td class="symptom">기분전환을 위해 담배를 피운다.</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+        </tr>
+        <tr>
+          <td class="symptom">담배로 인해 몸이 불편해졌지만 계속 피운다.</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+        </tr>
+        <tr>
+          <td class="symptom">
+            담배를 줄여 피우려고 하지만 뜻대로 줄여지지 않는다.
+          </td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+        </tr>
+        <tr>
+          <td class="symptom">아침에 일어나 담배를 피워야 하루가 개운하다.</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+        </tr>
+        <tr>
+          <td class="symptom">
+            감기에 걸리거나 몸이 좋지 않을 때도 담배를 피운다.
+          </td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+        </tr>
+        <tr>
+          <td class="symptom">금연 장소에서도 담배를 참기 힘들다.</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+        </tr>
+        <tr>
+          <td class="symptom">술을 마실때는 꼭 담배를 피운다.</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+        </tr>
+        <tr>
+          <td class="symptom">하루에 피우는 담배의 양은?</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+          <td>○</td>
+        </tr>
+      </table>
     </main>
 
     <nav class="nav">
       <ul class="nav__list">
         <li class="nav__btn">
-          <a class="nav__link" href="friends.html"
-            ><i class="far fa-user fa-2x"></i
-          ></a>
-        </li>
-        <li class="nav__btn">
-          <a class="nav__link" href="chats.html">
-            <span class="nav__notification badge">1</span>
-            <i class="far fa-comment fa-2x"></i>
+          <a class="nav__link" href="friends.html">
+            <img
+              src="imgs/btn_friends.png"
+              alt="Friends"
+              style="width: 36px; height: 36px"
+            />
           </a>
         </li>
         <li class="nav__btn">
-          <a class="nav__link" href="find.html"
-            ><i class="fas fa-search fa-2x"></i
-          ></a>
+          <a class="nav__link" href="chats.html">
+            <span class="nav__notification badge">!</span>
+            <img
+              src="imgs/btn_chats.png"
+              alt="Chats"
+              style="width: 36px; height: 36px"
+            />
+          </a>
         </li>
         <li class="nav__btn">
-          <a class="nav__link" href="more.html"
-            ><i class="fas fa-ellipsis-h fa-2x"></i
-          ></a>
+          <a class="nav__link" href="find.html">
+            <img
+              src="imgs/btn_find.png"
+              alt="Find"
+              style="width: 36px; height: 36px"
+            />
+          </a>
+        </li>
+        <li class="nav__btn">
+          <a class="nav__link" href="more.html">
+            <img
+              src="imgs/btn_more.png"
+              alt="More"
+              style="width: 36px; height: 36px"
+            />
+          </a>
         </li>
       </ul>
     </nav>
 
     <div id="no-mobile">
+      <img src="imgs/character_nodam_tiger.png" alt="Character Image" />
       <span>Your screen is too big ㅠㅠ</span>
     </div>
 
     <script
-      src="https://kit.fontawesome.com/6478f529f2.js"
+      src="https://kit.fontawesome.com/bc8922bb63.js"
       crossorigin="anonymous"
     ></script>
   </body>

@@ -92,7 +92,7 @@
 }
 
 .message-row--own .message__bubble {
-  background-color: var(--yellow);
+  background-color: var(--nodam-color);
   border-top-right-radius: 0px;
   border-top-left-radius: 15px;
   margin-right: 0px;
@@ -150,7 +150,7 @@
 }
 
 .reply__column button {
-  background-color: var(--yellow);
+  background-color: var(--nodam-color);
   border: none;
   width: 40px;
   height: 40px;

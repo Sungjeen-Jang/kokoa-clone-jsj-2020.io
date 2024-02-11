@@ -4,7 +4,88 @@
     <link rel="stylesheet" href="css/styles.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Friends - Kokoa Clone</title>
+    <title>금연클리닉</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%; /* Full height */
+        overflow: hidden; /* Disable body scrolling */
+      }
+
+      .status-bar,
+      .screen-header,
+      .nav {
+        position: fixed;
+        width: 100%;
+        z-index: 2; /* Ensure these elements stay on top */
+      }
+
+      .status-bar {
+        top: 0;
+        height: 20px; /* 예시로 추가한 높이, 실제 상황에 맞게 조정 필요 */
+      }
+
+      .screen-header {
+        top: 20px; /* Adjust this value based on the actual height of your status-bar */
+        height: 60px;
+      }
+
+      .nav {
+        bottom: 0;
+      }
+      #friends-display-link {
+        position: fixed; /* Keep as fixed to maintain position */
+        top: 80px; /* Adjusted to be below the screen-header: 20px (top of screen-header) + 60px (height of screen-header) = 80px */
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        background-color: #f0f0f0;
+        text-align: center;
+        border-bottom: 1px solid #ccc;
+      }
+
+      .friends-screen {
+        margin-top: 100px; /* Adjust based on the combined height of status-bar and screen-header */
+        margin-bottom: 50px; /* Adjust based on the height of nav */
+        overflow-y: auto; /* Enable vertical scrolling */
+        height: calc(
+          100% - 150px
+        ); /* Adjust based on total height of header and nav */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling for touch devices */
+      }
+      .h3-icon {
+        vertical-align: middle;
+        width: 1em; /* 이미지의 너비를 h3의 텍스트 크기에 맞춤 */
+        height: 1em; /* 이미지의 높이를 h3의 텍스트 크기에 맞춤 */
+      }
+      .friends-screen h3 {
+        margin-top: 20px; /* h3 태그 위에 마진 추가 */
+        font-size: 20pt;
+      }
+
+      .friends-screen ul,
+      .friends-screen p {
+        padding-left: 40px; /* ul의 왼쪽 패딩을 조정하여 내용을 오른쪽으로 이동 */
+        font-size: 15pt;
+      }
+
+      /* 조정: "장소" 밑의 내용들을 위한 들여쓰기 수정 */
+      .friends-screen h3:nth-of-type(2) + p.blt {
+        padding-left: 40px; /* "장소" 밑의 내용을 조금 더 앞으로 */
+      }
+
+      /* "운영현황"에 대한 ul 태그 스타일 유지 */
+      .friends-screen > ul:first-of-type {
+        padding-left: 60px;
+      }
+
+      /* "운영내용", "지속적인 관리", "이동 금연 클리닉 운영"에 대한 ul 태그 스타일 조정 */
+      .friends-screen > ul:not(:first-of-type) {
+        padding-left: 40px;
+      }
+    </style>
   </head>
   <body>
     <div class="status-bar">
@@ -23,7 +104,7 @@
     </div>
 
     <header class="screen-header">
-      <h1 class="screen-header__title">Friends</h1>
+      <h1 class="screen-header__title">금연클리닉</h1>
       <div class="screen-header__icons">
         <span><i class="fas fa-search fa-lg"></i></span>
         <span><i class="fas fa-music fa-lg"></i></span>
@@ -31,87 +112,139 @@
       </div>
     </header>
 
-    <a id="friends-display-link">
-      <i class="fas fa-info-circle"></i> Friends' Names Display
-      <i class="fas fa-chevron-right fa-xs"></i>
-    </a>
-
     <main class="friends-screen">
-      <div class="user-component">
-        <div class="user-component__column">
-          <img
-            src="https://avatars3.githubusercontent.com/u/3612017"
-            class="user-component__avatar user-component__avatar--xl"
-          />
-          <div class="user-component__text">
-            <h4 class="user-component__title">Nicolas</h4>
-            <!-- <h6 class="user-component__subtitle">this text whatever</h6> -->
-          </div>
-        </div>
-        <div class="user-component__column"></div>
-      </div>
-      <div class="friends-screen__channel">
-        <div class="friends-screen__channel-header">
-          <span>Channel</span>
-          <i class="fas fa-chevron-up fa-xs"></i>
-        </div>
-        <div class="user-component">
-          <div class="user-component__column">
-            <img
-              src="https://avatars3.githubusercontent.com/u/3612017"
-              class="user-component__avatar user-component__avatar--sm"
-            />
-            <div class="user-component__text">
-              <h4 class="user-component__title user-component__title--not-bold">
-                Channel
-              </h4>
-            </div>
-          </div>
-          <div class="user-component__column">
-            <div>
-              <span>2</span>
-              <i class="fas fa-chevron-right fa-xs"></i>
-            </div>
-          </div>
-        </div>
-      </div>
+      <h3 style="">
+        <img
+          src="imgs/paragraph_separator.png"
+          alt=""
+          style="vertical-align: middle"
+          class="h3-icon"
+        />
+        운영현황
+      </h3>
+      <ul class="bu" style="list-style-type: disc">
+        <li style="">월~금 09:00~18:00 (점심시간 12:00~13:00)</li>
+        <li style="">사전 예약제로 운영 중</li>
+        <li style="">
+          예약&nbsp;전화&nbsp;<span class="em_blue" style=""
+            >02)860-2177, 2185, 3243</span
+          >
+        </li>
+      </ul>
+
+      <h3 style="">
+        <img
+          src="imgs/paragraph_separator.png"
+          alt=""
+          style="vertical-align: middle"
+          class="h3-icon"
+        />
+        장소
+      </h3>
+      <p class="blt" style="">구로구 보건소 금연클리닉(2층)</p>
+
+      <h3 style="">
+        <img
+          src="imgs/paragraph_separator.png"
+          alt=""
+          style="vertical-align: middle"
+          class="h3-icon"
+        />
+        운영내용
+      </h3>
+      <ul class="bu">
+        <li style="">금연결심자 금연클리닉등록</li>
+        <li style="">혈압, 호기일산화탄소, 니코틴의존도 측정</li>
+        <li style="">금연교육 및 상담</li>
+        <li style="">금단증상 및 스트레스 관리법 상담 및 교육</li>
+        <li style="">약물요법</li>
+        <li style="">금연보조제(니코틴 패치, 껌, 사탕) 제공</li>
+      </ul>
+
+      <h3 style="">
+        <img
+          src="imgs/paragraph_separator.png"
+          alt=""
+          style="vertical-align: middle"
+          class="h3-icon"
+        />
+        지속적인 관리
+      </h3>
+      <ul class="bu">
+        <li style="">전화, 문자메시지, 이메일 등을 통해 6개월간 관리</li>
+        <li style="">금연성공자에게 기념품 증정</li>
+      </ul>
+
+      <h3 style="">
+        <img
+          src="imgs/paragraph_separator.png"
+          alt=""
+          style="vertical-align: middle"
+          class="h3-icon"
+        />
+        이동 금연클리닉 운영
+      </h3>
+      <ul class="bu">
+        <li style="">사업장에서 단체로 금연클리닉 등록을 원하는 경우</li>
+        <li style="">
+          금연상담사가 사업장을 정기적으로 방문하여 금연클리닉 운영
+        </li>
+      </ul>
     </main>
 
     <nav class="nav">
       <ul class="nav__list">
         <li class="nav__btn">
-          <a class="nav__link" href="friends.html"
-            ><i class="fas fa-user fa-2x"></i
-          ></a>
-        </li>
-        <li class="nav__btn">
-          <a class="nav__link" href="chats.html">
-            <span class="nav__notification badge">1</span>
-            <i class="far fa-comment fa-2x"></i>
+          <a class="nav__link" href="friends.html">
+            <img
+              src="imgs/btn_friends.png"
+              alt="Friends"
+              style="width: 36px; height: 36px"
+            />
           </a>
         </li>
         <li class="nav__btn">
-          <a class="nav__link" href="find.html"
-            ><i class="fas fa-search fa-2x"></i
-          ></a>
+          <a class="nav__link" href="chats.html">
+            <span class="nav__notification badge">!</span>
+            <img
+              src="imgs/btn_chats.png"
+              alt="Chats"
+              style="width: 36px; height: 36px"
+            />
+          </a>
         </li>
         <li class="nav__btn">
-          <a class="nav__link" href="more.html"
-            ><i class="fas fa-ellipsis-h fa-2x"></i
-          ></a>
+          <a class="nav__link" href="find.html">
+            <img
+              src="imgs/btn_find.png"
+              alt="Find"
+              style="width: 36px; height: 36px"
+            />
+          </a>
+        </li>
+        <li class="nav__btn">
+          <a class="nav__link" href="more.html">
+            <img
+              src="imgs/btn_more.png"
+              alt="More"
+              style="width: 36px; height: 36px"
+            />
+          </a>
         </li>
       </ul>
     </nav>
+
     <div id="splash-screen">
-      <i class="fas fa-comment"></i>
+      <img src="imgs/character_nodam_tiger.png" alt="Character Image" />
     </div>
 
     <div id="no-mobile">
-      <span>Your screen is too big 😭</span>
+      <img src="imgs/character_nodam_tiger.png" alt="Character Image" />
+      <span>Your screen is too big ㅠㅠ</span>
     </div>
 
     <script
-      src="https://kit.fontawesome.com/6478f529f2.js"
+      src="https://kit.fontawesome.com/bc8922bb63.js"
       crossorigin="anonymous"
     ></script>
   </body>

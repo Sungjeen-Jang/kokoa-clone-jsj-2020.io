@@ -5,6 +5,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Settings - Kokoa Clone</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%; /* Full height */
+        overflow: hidden; /* Disable scrolling on body */
+      }
+
+      .status-bar,
+      .alt-header,
+      .nav {
+        position: fixed;
+        width: 100%;
+        z-index: 2; /* Ensure these elements stay on top */
+      }
+
+      .status-bar {
+        top: 0;
+      }
+
+      .alt-header {
+        top: 20px; /* Adjust this value based on your status-bar height */
+      }
+
+      .nav {
+        bottom: 0;
+      }
+
+      .main-screen {
+        margin-top: 100px; /* Adjust based on the combined height of status-bar and alt-header */
+        margin-bottom: 50px; /* Adjust based on the height of nav */
+        overflow-y: auto; /* Enable vertical scrolling */
+        height: calc(
+          100% - 150px
+        ); /* Adjust height to account for header and nav */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling for touch devices */
+      }
+    </style>
   </head>
   <body>
     <div class="status-bar">
@@ -65,35 +104,52 @@
     <nav class="nav">
       <ul class="nav__list">
         <li class="nav__btn">
-          <a class="nav__link" href="friends.html"
-            ><i class="far fa-user fa-2x"></i
-          ></a>
-        </li>
-        <li class="nav__btn">
-          <a class="nav__link" href="chats.html">
-            <span class="nav__notification badge">1</span>
-            <i class="far fa-comment fa-2x"></i>
+          <a class="nav__link" href="friends.html">
+            <img
+              src="imgs/btn_friends.png"
+              alt="Friends"
+              style="width: 36px; height: 36px"
+            />
           </a>
         </li>
         <li class="nav__btn">
-          <a class="nav__link" href="find.html"
-            ><i class="fas fa-search fa-2x"></i
-          ></a>
+          <a class="nav__link" href="chats.html">
+            <span class="nav__notification badge">!</span>
+            <img
+              src="imgs/btn_chats.png"
+              alt="Chats"
+              style="width: 36px; height: 36px"
+            />
+          </a>
         </li>
         <li class="nav__btn">
-          <a class="nav__link" href="more.html"
-            ><i class="fas fa-ellipsis-h fa-2x"></i
-          ></a>
+          <a class="nav__link" href="find.html">
+            <img
+              src="imgs/btn_find.png"
+              alt="Find"
+              style="width: 36px; height: 36px"
+            />
+          </a>
+        </li>
+        <li class="nav__btn">
+          <a class="nav__link" href="more.html">
+            <img
+              src="imgs/btn_more.png"
+              alt="More"
+              style="width: 36px; height: 36px"
+            />
+          </a>
         </li>
       </ul>
     </nav>
 
     <div id="no-mobile">
+      <img src="imgs/character_nodam_tiger.png" alt="Character Image" />
       <span>Your screen is too big ㅠㅠ</span>
     </div>
 
     <script
-      src="https://kit.fontawesome.com/6478f529f2.js"
+      src="https://kit.fontawesome.com/bc8922bb63.js"
       crossorigin="anonymous"
     ></script>
   </body>

@@ -4,7 +4,57 @@
     <link rel="stylesheet" href="css/styles.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chats - Kokoa Clone</title>
+    <title>금연 방법 7가지</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%; /* Ensure full height */
+        overflow: hidden; /* Disable scrolling on body */
+      }
+
+      .screen-header,
+      .nav {
+        position: fixed;
+        width: 100%;
+        z-index: 100; /* Ensure they stay on top */
+      }
+
+      .screen-header {
+        top: 0;
+      }
+
+      .nav {
+        bottom: 0;
+      }
+
+      .main-screen {
+        margin-top: 60px; /* Adjust based on header height */
+        margin-bottom: 60px; /* Adjust based on nav height */
+        overflow-y: auto; /* Enable scrolling within main content */
+        height: calc(100% - 120px); /* Adjust height based on header and nav */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+      }
+      .icon_box2 {
+        margin-top: 20px; /* 마진 상단 설정 */
+      }
+
+      .icon_box2 .title {
+        color: blue; /* 파란색으로 설정 */
+        font-size: 20pt;
+        margin-bottom: 10px; /* 문단 아래 마진 설정 */
+      }
+
+      .icon_box2 .title + p {
+        color: gray; /* 회색으로 설정 */
+        font-size: 15pt;
+      }
+
+      .em_blue {
+        color: blue; /* 이미 파란색이므로 이 설정은 선택적 */
+      }
+    </style>
   </head>
   <body>
     <div class="status-bar">
@@ -23,7 +73,7 @@
     </div>
 
     <header class="screen-header">
-      <h1 class="screen-header__title">Chats</h1>
+      <h1 class="screen-header__title">금연 방법 7가지</h1>
       <div class="screen-header__icons">
         <span><i class="fas fa-search fa-lg"></i></span>
         <span><i class="far fa-comment-dots fa-lg"></i></span>
@@ -33,60 +83,184 @@
     </header>
 
     <main class="main-screen">
-      <a href="chat.html">
-        <div class="user-component">
-          <div class="user-component__column">
-            <img
-              src="https://avatars3.githubusercontent.com/u/3612017"
-              class="user-component__avatar user-component__avatar"
-            />
-            <div class="user-component__text">
-              <h4 class="user-component__title">Nicolas</h4>
-              <h6 class="user-component__subtitle">
-                Please check My Kokoa Account Info
-              </h6>
+      <div class="temp_diagonal_box">
+        <div class="diagonal_wrap">
+          <div class="icon_box2">
+            <div class="box_wrap">
+              <h3 class="h0 title">
+                <em class="em_blue">첫째,</em> 담배를 끊어야겠다는 생각을 가지는
+                것이 가장 중요하다.
+              </h3>
+              <p>
+                담배는 단순한 기호품이 아니라 해로운 약물이라는 사실을 깨닫는
+                것이 필요하다. 담배는 흡연자 자신에게 일종의 약물중독과 같다.
+                자신의 건강을 파괴하고 경제적 손해를 입힌다. 미국의학협회에서는
+                담배를 마약과 같이 불법화해야 한다고 주장할 정도이다.<br />
+                또한 담배는 가족의 건강을 해치는 오염원이다. 담배를 피우는
+                남편을 가진 아내는 폐암, 심장병에 걸릴 확률이 30%나 높아진다.
+                담배를 피우는 아버지를 가진 아이는 감기가 걸릴 확률이 3배나
+                높고, 합병증으로 입원할 확률도 2~3배 높아진다. 폐기능이
+                떨어지고, 천식도 악화된다. 담배가 자신과 가족의 건강에
+                백해무익하다는 사실을 깨닫고 이를 끊겠다고 생각하는 것이
+                필요하다.
+              </p>
             </div>
           </div>
-          <div class="user-component__column">
-            <span class="user-component__time">21:22</span>
-            <div class="badge">1</div>
+
+          <div class="icon_box2">
+            <div class="box_wrap">
+              <h3 class="h0 title">
+                <em class="em_blue">둘째,</em> 담배를 끊을 수 있는 기회를 잘
+                이용하자.
+              </h3>
+              <p>
+                담배를 끊을 수 있는 절호의 기회가 있다. 기관지염, 십이지장궤양,
+                고혈압 등 담배와 관련이 있는 병을 앓게 되면 바로 그때가 담배를
+                끊을 수 있는 좋은 기회이다. 아이가 감기에 걸렸을 때도
+                마찬가지이다. 이런 기회를 잘 이용하면 전화위복이 될 수 있다.
+              </p>
+            </div>
+          </div>
+
+          <div class="icon_box2">
+            <div class="box_wrap">
+              <h3 class="h0 title">
+                <em class="em_blue">셋째,</em> 결심을 굳게 하고 금연일을 정하자.
+              </h3>
+              <p>
+                흡연은 약물중독과 비슷하지만 굳은 결심만 있다면 금연에 성공할
+                가능성이 높다. 결심을 하면 즉시 ‘금연일(담배를 끊는 날)’을
+                정하자. 금연일은 대개 7∼10일 후로 잡는 것이 좋다. 너무 뒤로
+                잡으면 마음이 흐트러질 가능성이 높다. 그러나 스트레스가 많은
+                때는 피하는 것이 좋다. 시험을 앞두고 금연일을 잡으면 실패할
+                확률이 높다.
+              </p>
+            </div>
+          </div>
+
+          <div class="icon_box2">
+            <div class="box_wrap">
+              <h3 class="h0 title">
+                <em class="em_blue">넷째,</em> 담배를 끊는다는 사실을 여러
+                사람에게 널리 알리자.
+              </h3>
+              <p>
+                담배를 끊으려면 주위의 도움이 필요하다. 특히 가족의 도움은
+                필수적이다. 금연에 실패하면 창피할까 봐 주위에 말을 안 하는
+                경우가 있다. 그러나 이것은 잘못이다. 혹시 금연을 방해하는
+                몰지각한 동료가 있는 경우에는 예외로 할 수도 있다. 한 가지 알아
+                둘 것은 한 번에 담배를 끊는 사람은 매우 드물다는 사실이다.
+                금연에 성공한 대부분의 사람은 여러 번에 걸친 실패를 경험한
+                재수생이다.
+              </p>
+            </div>
+          </div>
+
+          <div class="icon_box2">
+            <div class="box_wrap">
+              <h3 class="h0 title">
+                <em class="em_blue">다섯째,</em> 금연을 위한 환경조성도
+                필요하다.
+              </h3>
+              <p>
+                담배를 생각나게 하는 물건, 즉 재떨이, 담배, 라이터 등을 아예
+                버리는 것이 좋다. 자동차에 부착된 라이터를 떼 버리는 사람도
+                있다. 담배를 끊은 후에는 담배를 피울 가능성이 있는 상황을 피해야
+                한다. 가장 문제가 되는 것은 회식이다. 이때는 술을 먹게 되고,
+                담배를 피우고 싶은 욕구가 커지게 된다. 따라서 금연 후 2∼3주
+                동안에는 이런 자리를 피하는 것이 좋다.
+              </p>
+            </div>
+          </div>
+
+          <div class="icon_box2">
+            <div class="box_wrap">
+              <h3 class="h0 title">
+                <em class="em_blue">여섯째,</em> 금단증상에 대응하는 방법을
+                알아야 한다.
+              </h3>
+              <p>
+                금단증상이란 담배를 끊은 후 나타나는 불안, 초조, 집중력장애,
+                불면 등의 증상을 말한다. 이런 증상은 중독과 비례하여 심해진다.
+                금단증상은 금연 후 3∼4일에 가장 심해지고 2∼3주 후면 없어진다.
+                그러므로 이 기간 동안만 증상을 잘 조절하면 된다. 가장 좋은
+                방법은 신선한 공기를 마시거나 운동을 하는 것이다. 은단 씹기,
+                무가당 껌 씹기, 찬물 마시기, 양치질 등도 도움이 된다. 다만
+                칼로리가 많은 음식은 비만을 일으킬 수 있으므로 피해야 한다.
+              </p>
+            </div>
+          </div>
+
+          <div class="icon_box2">
+            <div class="box_wrap">
+              <h3 class="h0 title">
+                <em class="em_blue">일곱째,</em> 약물사용으로 도움을 받을 수도
+                있다.
+              </h3>
+              <p>
+                금단증상이 심한 경우에 이를 완화시켜 주는 약물로는 피부에 붙이는
+                니코틴 패치와 니코틴 껌이 있다. 이러한 약물은 적은 양의 니코틴을
+                공급해 주어서 금단증상을 완화시키는 기능을 한다. 그러나 과신은
+                금물이다. 이 약물은 자동적으로 담배를 끊게 해주는 것이 아니라
+                약간 도와줄 뿐이라는 사실을 알아야 한다. 또한 심장질환이나 임신
+                등 신체 상태에 따라 사용하면 안 되는 경우도 있으므로 의사의
+                도움을 받아서 사용하는 것이 좋다.
+              </p>
+            </div>
           </div>
         </div>
-      </a>
+      </div>
     </main>
 
     <nav class="nav">
       <ul class="nav__list">
         <li class="nav__btn">
-          <a class="nav__link" href="friends.html"
-            ><i class="far fa-user fa-2x"></i
-          ></a>
-        </li>
-        <li class="nav__btn">
-          <a class="nav__link" href="chats.html">
-            <span class="nav__notification badge">1</span>
-            <i class="fas fa-comment fa-2x"></i>
+          <a class="nav__link" href="friends.html">
+            <img
+              src="imgs/btn_friends.png"
+              alt="Friends"
+              style="width: 36px; height: 36px"
+            />
           </a>
         </li>
         <li class="nav__btn">
-          <a class="nav__link" href="find.html"
-            ><i class="fas fa-search fa-2x"></i
-          ></a>
+          <a class="nav__link" href="chats.html">
+            <span class="nav__notification badge">!</span>
+            <img
+              src="imgs/btn_chats.png"
+              alt="Chats"
+              style="width: 36px; height: 36px"
+            />
+          </a>
         </li>
         <li class="nav__btn">
-          <a class="nav__link" href="more.html"
-            ><i class="fas fa-ellipsis-h fa-2x"></i
-          ></a>
+          <a class="nav__link" href="find.html">
+            <img
+              src="imgs/btn_find.png"
+              alt="Find"
+              style="width: 36px; height: 36px"
+            />
+          </a>
+        </li>
+        <li class="nav__btn">
+          <a class="nav__link" href="more.html">
+            <img
+              src="imgs/btn_more.png"
+              alt="More"
+              style="width: 36px; height: 36px"
+            />
+          </a>
         </li>
       </ul>
     </nav>
 
     <div id="no-mobile">
+      <img src="imgs/character_nodam_tiger.png" alt="Character Image" />
       <span>Your screen is too big ㅠㅠ</span>
     </div>
 
     <script
-      src="https://kit.fontawesome.com/6478f529f2.js"
+      src="https://kit.fontawesome.com/bc8922bb63.js"
       crossorigin="anonymous"
     ></script>
   </body>

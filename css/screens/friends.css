@@ -40,15 +40,19 @@
 }
 
 #splash-screen {
-  background-color: var(--yellow);
+  background-color: var(--nodam-color);
   position: absolute;
-  height: 100vh;
-  width: 100vw;
-  top: 0;
+  background-size: cover; /* 이미지가 div 크기에 맞게 조절됩니다 */
+  background-position: center; /* 이미지가 중앙에 위치하도록 합니다 */
+  width: 100vw; /* 전체 뷰포트 너비 */
+  height: 100vh; /* 전체 뷰포트 높이 */
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 132px;
+  filter: blur(5px); /* 흐릿한 효과를 줍니다. 필요에 따라 값을 조정하세요 */
+  position: absolute; /* 필요한 위치 조정을 위해 */
+  top: 0;
+  left: 0;
   animation: hideSplashScreen 0.3s ease-in-out forwards;
   animation-delay: 0.3s;
 }
